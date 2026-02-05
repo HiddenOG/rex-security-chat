@@ -4,10 +4,8 @@ export const REX_KNOWLEDGE = {
     address: "2500 Wilcrest Drive, Suite 371, Houston, TX 77042",
     president: "Yusuf Abu",
     hr: "Tyra Salisbury",
-    hrPhone: "832-684-3621",
-    officePhone: "832-690-5813",
-    email: "rexllc24@gmail.com",
-    altEmail: "rexllc24@yahoo.com",
+    hrPhone: "832-690-5813",
+    email: "rexllc24@yahoo.com",
     website: "https://Rexsecuritypatrols.com"
   },
   services: [
@@ -22,8 +20,8 @@ export const REX_KNOWLEDGE = {
     "Parking Lot & Perimeter Patrol"
   ],
   pricing: {
-    unarmed: "starting at $20 per officer/hour",
-    armed: "starting at $20 per officer/hour",
+    unarmed: "starting at $20.5 per officer/hour",
+    armed: "starting at $17.5 per officer/hour",
     mobilePatrol: "mobile patrol rental options; $600 monthly",
     event: " $350 per officer up to 5hrs (overtimerate applies)"
   },
@@ -116,7 +114,7 @@ export const generateSimulatedResponse = (userMessage: string): string | null =>
   
   // Contact Info (simple queries)
   if ((msg.includes('contact') || msg.includes('phone') || msg.includes('call')) && msg.split(' ').length < 5) {
-    return `**Contact Rex Security Patrol Inc:**\n\n📍 ${REX_KNOWLEDGE.company.address}\n\n📞 Operations: ${REX_KNOWLEDGE.company.officePhone}\n📞 HR: ${REX_KNOWLEDGE.company.hrPhone}\n📧 ${REX_KNOWLEDGE.company.email}\n\n🕐 Office Hours: ${REX_KNOWLEDGE.hours.office}\n🕐 Security Operations: ${REX_KNOWLEDGE.hours.operations}`;
+    return `**Contact Rex Security Patrol Inc:**\n\n📍 ${REX_KNOWLEDGE.company.address}\n\n HR: ${REX_KNOWLEDGE.company.hrPhone}\n📧 ${REX_KNOWLEDGE.company.email}\n\n🕐 Office Hours: ${REX_KNOWLEDGE.hours.office}\n🕐 Security Operations: ${REX_KNOWLEDGE.hours.operations}`;
   }
   
   // Return null to trigger Gemini for complex queries
@@ -147,3 +145,4 @@ export const extractIntent = (response: string): {
     cleanResponse: response
   };
 };
+
